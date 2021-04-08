@@ -15,6 +15,7 @@ const Article = ({ data }) => {
   const [comments, setComments] = useState(data.comments);
 
   const handleSubmit = async (comment) => {
+    console.log(comment);
     comment.article = data.id;
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/comments/`,

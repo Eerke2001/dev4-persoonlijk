@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ data }) {
+  console.log(data);
   return (
     <Layout>
       <p>{process.env.NEXT_PUBLIC_DEMO}</p>

@@ -5,16 +5,16 @@ const Layout = ({ children }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>De Naald</title>
+        <title>Sticky Message</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className={styles.header}>
         <h1 className={styles.title}>
           <Link href="/">
-            <a>De Naald</a>
+            <a>Sticky Message</a>
           </Link>
         </h1>
-        <p className={styles.description}>Het nieuws komt er heet van</p>
+        <p className={styles.description}>Stuur een boodschap die blijft plakken!</p>
         <Link href="/subscribe">
           <a>Schrijf je in voor onze nieuwsbrief</a>
         </Link>

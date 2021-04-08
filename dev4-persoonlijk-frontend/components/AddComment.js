@@ -9,6 +9,7 @@ const AddComment = ({ onSubmit }) => {
     };
     e.target.reset();
     onSubmit(data);
+    console.log(data);
   };
 
   return (
