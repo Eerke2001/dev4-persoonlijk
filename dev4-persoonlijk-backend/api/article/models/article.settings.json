@@ -23,10 +23,6 @@
       "type": "richtext",
       "required": true
     },
-    "publishedAt": {
-      "type": "datetime",
-      "required": true
-    },
     "status": {
       "type": "enumeration",
       "enum": [
@@ -44,17 +40,6 @@
     "category": {
       "model": "category",
       "via": "articles"
-    },
-    "image": {
-      "model": "file",
-      "via": "related",
-      "allowedTypes": [
-        "files",
-        "images",
-        "videos"
-      ],
-      "plugin": "upload",
-      "required": true
     },
     "author": {
       "model": "writer",

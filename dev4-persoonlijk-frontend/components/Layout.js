@@ -1,6 +1,7 @@
 import styles from "./Layout.module.css";
 import Head from "next/head";
 import Link from "next/link";
+import AddArticle from "./AddArticle";
 const Layout = ({ children }) => {
   return (
     <div className={styles.container}>

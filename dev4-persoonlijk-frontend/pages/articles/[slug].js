@@ -13,6 +13,7 @@ const Article = ({ data }) => {
   }
 
   const [comments, setComments] = useState(data.comments);
+  console.log(comments);
 
   const handleSubmit = async (comment) => {
     console.log(comment);
@@ -30,6 +31,7 @@ const Article = ({ data }) => {
     if (response.ok) {
       const result = await response.json();
       const tmp = [...comments, result];
+      console.log(tmp);
       setComments(tmp);
     }
   };
