@@ -1,3 +1,5 @@
+import styles from "./Comments.module.css";
+
 const Comments = ({ comments = [] }) => {
   return (
     <section>

@@ -8,3 +8,11 @@
   display: grid;
   grid-template-columns: 10ch 1fr;
 }
+
+.submit{
+  background-color: #0070f3;
+  border: none;
+  color: white;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+}

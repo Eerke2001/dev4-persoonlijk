@@ -9,10 +9,10 @@ import { useState } from "react";
 export default function Home({ data }) {
 
   const [articles, setArticles] = useState(data);
-  console.log(articles);
+  //console.log(articles);
 
   const handleSubmit = async (article) => {
-    console.log(article);
+    //console.log(article);
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/articles/`,
       {
@@ -25,14 +25,14 @@ export default function Home({ data }) {
     );
     if (response.ok) {
       const result = await response.json();
-      console.log(result);
+      //console.log(result);
       const tmp = [result, ...articles];
-      console.log(tmp);
+      //console.log(tmp);
       setArticles(tmp);
     }
   };
 
-  console.log(data);
+  //console.log(data);
   return (
     <Layout>
       <AddArticle onSubmit={handleSubmit}></AddArticle>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import AddComment from "../../components/AddComment";
 import ReactMarkdown from "react-markdown";
 import { useRouter } from "next/router";
+import styles from "../../components/Comments.module.css";
 // dit is een aanpassing
 
 const Article = ({ data }) => {
@@ -13,10 +14,10 @@ const Article = ({ data }) => {
   }
 
   const [comments, setComments] = useState(data.comments);
-  console.log(comments);
+  //console.log(comments);
 
   const handleSubmit = async (comment) => {
-    console.log(comment);
+    //console.log(comment);
     comment.article = data.id;
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/comments/`,
@@ -31,7 +32,7 @@ const Article = ({ data }) => {
     if (response.ok) {
       const result = await response.json();
       const tmp = [...comments, result];
-      console.log(tmp);
+      //console.log(tmp);
       setComments(tmp);
     }
   };
@@ -41,8 +42,10 @@ const Article = ({ data }) => {
       <>
         <h2>{data.title}</h2>
         <ReactMarkdown source={data.content} escapeHtml={false} />
-        <Comments comments={comments} />
-        <AddComment onSubmit={handleSubmit} />
+        <div className={styles.chat}>
+          <Comments comments={comments} />
+          <AddComment onSubmit={handleSubmit} />
+        </div>
       </>
     </Layout>
   );

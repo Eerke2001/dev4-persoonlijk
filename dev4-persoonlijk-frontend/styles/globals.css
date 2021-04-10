@@ -4,6 +4,10 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    /* background-image: url("../assets/images/jungle-bg.jpg");
+    background-size: cover;
+    background-position: center; */
+  background-color: rgb(236, 236, 236);
 }
 
 a {

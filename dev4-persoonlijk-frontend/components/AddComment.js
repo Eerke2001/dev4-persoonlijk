@@ -24,7 +24,7 @@ const AddComment = ({ onSubmit }) => {
           Comment:
           <textarea name="content" required maxLength="500"></textarea>
         </label>
-        <input type="submit" value="Send" />
+        <input className={styles.submit} type="submit" value="Send" />
       </form>
     </section>
   );
