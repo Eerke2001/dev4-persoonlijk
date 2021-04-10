@@ -18,3 +18,13 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.fa-paper-plane{
+  color: white;
+  z-index: 2;
+  position: absolute;
+}
+
+button:focus, input:focus, textarea:focus {
+  outline-width: 0;
+}

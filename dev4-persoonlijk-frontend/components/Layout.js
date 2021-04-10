@@ -8,6 +8,7 @@ const Layout = ({ children }) => {
       <Head>
         <title>Sticky Message</title>
         <link rel="icon" href="/favicon.ico" />
+        <script src="https://kit.fontawesome.com/e2fdaa5e93.js" crossorigin="anonymous"></script>
       </Head>
       <header className={styles.header}>
         <h1 className={styles.title}>

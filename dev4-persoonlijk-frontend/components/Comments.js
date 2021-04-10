@@ -3,11 +3,11 @@ import styles from "./Comments.module.css";
 const Comments = ({ comments = [] }) => {
   return (
     <>
-      <h3>Comments</h3>
+      <h3 className={styles.title}>Chat</h3>
       <section className={styles.messages}>
-        <ul>
+        <ul className={styles.ul}>
           {comments.map((comment) => (
-            <li key={comment.id}>
+            <li className={styles.li} key={comment.id}>
               <strong>{comment.name}</strong>
               <p>{comment.content}</p>
             </li>

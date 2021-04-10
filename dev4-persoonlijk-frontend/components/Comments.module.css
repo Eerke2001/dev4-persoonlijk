@@ -13,3 +13,18 @@
     height: 10rem;
     overflow: scroll;
 }
+
+.title{
+    margin: 0rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 0.1rem solid rgb(236, 236, 236);
+}
+
+.ul{
+    padding: 0rem;
+}
+
+.li{
+    text-decoration: none;
+    list-style-type: none;
+}

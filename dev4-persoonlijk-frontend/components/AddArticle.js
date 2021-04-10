@@ -1,5 +1,5 @@
 import styles from "./AddComment.module.css";
-import moment from 'moment';
+//import moment from 'moment';
 
 const AddArticle = ({ onSubmit }) => {
     const handleSubmit = (e) => {
