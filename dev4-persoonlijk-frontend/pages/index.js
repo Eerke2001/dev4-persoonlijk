@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import Layout from "../components/Layout";
+import Articles from "../components/Articles.js";
 import styles from "../styles/Home.module.css";
 import AddArticle from "../components/AddArticle.js";
 import { useState } from "react";
@@ -24,7 +25,8 @@ export default function Home({ data }) {
     );
     if (response.ok) {
       const result = await response.json();
-      const tmp = [...articles, result];
+      console.log(result);
+      const tmp = [result, ...articles];
       console.log(tmp);
       setArticles(tmp);
     }
@@ -35,16 +37,7 @@ export default function Home({ data }) {
     <Layout>
       <AddArticle onSubmit={handleSubmit}></AddArticle>
       <p>{process.env.NEXT_PUBLIC_DEMO}</p>
-      <div className={styles.grid}>
-        {data.map((article) => (
-          <Link key={article.id} href={`/articles/${article.slug}`}>
-            <a className={styles.card}>
-              <h3>{article.title}</h3>
-              <p>{article.description}</p>
-            </a>
-          </Link>
-        ))}
-      </div>
+      <Articles articles={articles} />
     </Layout>
   );
 }
