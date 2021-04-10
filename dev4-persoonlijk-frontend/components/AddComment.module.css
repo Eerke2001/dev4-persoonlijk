@@ -17,7 +17,7 @@
 
 .nameInput{
   border: none;
-  border-bottom: 0.1rem solid black;
+  border-bottom: 0.1rem solid rgb(145, 145, 145);
   width: 100%;
   margin-top: 0.3rem;
   padding-bottom: 0.3rem;

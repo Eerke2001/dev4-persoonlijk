@@ -10,7 +10,7 @@
 }
 
 .messages{
-    height: 10rem;
+    height: 13rem;
     overflow: scroll;
 }
 
@@ -24,7 +24,24 @@
     padding: 0rem;
 }
 
+.p{
+    margin: 0rem;
+    padding: 0rem;
+    background-color: rgb(236, 236, 236);
+    border-radius: 2rem;
+    padding: 0.5rem 0rem 0.5rem 1rem;
+}
+
 .li{
     text-decoration: none;
     list-style-type: none;
+    font-size: 0.9rem;
+    margin-top: 0.6rem;
+}
+
+.liName{
+    margin: 0rem;
+    margin-left: 0.4rem;
+    padding: 0rem;
+    font-size: 0.7rem;
 }
