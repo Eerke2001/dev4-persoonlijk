@@ -42,7 +42,7 @@ const Article = ({ data }) => {
       <>
         <h2>{data.title}</h2>
         <ReactMarkdown source={data.content} escapeHtml={false} />
-        <div className={styles.chat}>
+        <div className={`${styles.chat}`}>
           <Comments comments={comments} sender={data.sender} />
           <AddComment onSubmit={handleSubmit} />
         </div>

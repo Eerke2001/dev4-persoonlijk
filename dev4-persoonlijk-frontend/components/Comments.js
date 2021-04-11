@@ -1,5 +1,8 @@
 import styles from "./Comments.module.css";
 import React, { useEffect, useRef, useState } from 'react';
+import { faSortDown } from '@fortawesome/free-solid-svg-icons';
+import { faSortUp } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Comments = ({ comments = [], sender }) => {
 
@@ -21,7 +24,12 @@ const Comments = ({ comments = [], sender }) => {
 
   return (
     <>
-      <h3 className={styles.title}>{sender}</h3>
+      <div className={`${styles.sort}`}>
+        <h3 className={styles.title}>{sender}</h3>
+        <div className={`${styles.sortButton}`}>
+          <FontAwesomeIcon icon={faSortDown} />
+        </div>
+      </div>
       <section className={styles.messages} id="ul">
         <ul className={styles.ul}>
           {

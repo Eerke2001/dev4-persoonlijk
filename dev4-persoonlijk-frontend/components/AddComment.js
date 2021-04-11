@@ -18,8 +18,7 @@ const AddComment = ({ onSubmit }) => {
     <section>
       <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
         <label className={styles.namelabel}>
-          Naam:
-          <input className={styles.nameInput} type="text" name="name" required />
+          <input className={styles.nameInput} placeholder="Naam" type="text" name="name" required />
         </label>
         <div className={styles.send}>
           <label>

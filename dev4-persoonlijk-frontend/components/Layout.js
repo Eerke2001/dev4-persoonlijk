@@ -17,9 +17,6 @@ const Layout = ({ children }) => {
           </Link>
         </h1>
         <p className={styles.description}>Stuur een boodschap die blijft plakken!</p>
-        <Link href="/subscribe">
-          <a>Schrijf je in voor onze nieuwsbrief</a>
-        </Link>
       </header>
       <main className={styles.main}>{children}</main>
     </div>
