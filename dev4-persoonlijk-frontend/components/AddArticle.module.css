@@ -1,0 +1,29 @@
+.label{
+    display: grid;
+    grid-template-columns: 15ch 1fr;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0px 0px 20px -3px #b6b6b6;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 50rem;
+    height: 25rem;
+}
+
+.section{
+    
+}
+
+.submit{
+    border: none;
+    background-color: #0070f3;
+    color: white;
+    padding: 0.7rem;
+    border-radius: 2rem;
+}

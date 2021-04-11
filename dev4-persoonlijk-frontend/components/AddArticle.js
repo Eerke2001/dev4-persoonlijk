@@ -1,15 +1,21 @@
-import styles from "./AddComment.module.css";
+import styles from "./AddArticle.module.css";
 //import moment from 'moment';
 
 const AddArticle = ({ onSubmit }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!e.target.sender.value) {
+            e.target.sender.value = 'A good soul';
+        }
+
         const data = {
             title: e.target.title.value,
             description: e.target.description.value,
             content: e.target.content.value,
             status: 'published',
-            slug: e.target.title.value.split(" ").join("-")
+            slug: e.target.title.value.split(" ").join("-"),
+            sender: e.target.sender.value
         };
         console.log(data.slug);
         e.target.reset();
@@ -18,22 +24,29 @@ const AddArticle = ({ onSubmit }) => {
     };
 
     return (
-        <section>
-            <h3>Add article</h3>
+        <section className={styles.section}>
+            <h3>Maak een boodschap</h3>
+
             <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
-                <label className={styles.label}>
-                    Title:
+                <div>
+                    <label className={styles.label}>
+                        Jouw naam:
+          <input type="text" name="sender" />
+                    </label>
+                    <label className={styles.label}>
+                        Titel boodschap:
           <input type="text" name="title" required />
-                </label>
-                <label className={styles.label}>
-                    Description:
+                    </label>
+                    <label className={styles.label}>
+                        Description:
           <textarea name="description" required maxLength="500"></textarea>
-                </label>
-                <label className={styles.label}>
-                    Content:
+                    </label>
+                    <label className={styles.label}>
+                        Content:
           <textarea name="content" required maxLength="500"></textarea>
-                </label>
-                <input type="submit" value="Send" />
+                    </label>
+                </div>
+                <input className={styles.submit} type="submit" value="Create message" />
             </form>
         </section>
     );

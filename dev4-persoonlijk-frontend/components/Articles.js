@@ -7,7 +7,7 @@ const Articles = ({ articles = [] }) => {
             {articles.map((article) => (
                 <Link key={article.id} href={`/articles/${article.slug}`}>
                     <a className={styles.card}>
-                        <h3>{article.title}</h3>
+                        <h3>{article.title} - <span className={styles.sender}>{article.sender}</span></h3>
                         <p>{article.description}</p>
                     </a>
                 </Link>

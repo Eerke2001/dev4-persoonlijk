@@ -48,6 +48,9 @@
     "comments": {
       "collection": "comment",
       "via": "article"
+    },
+    "sender": {
+      "type": "string"
     }
   }
 }

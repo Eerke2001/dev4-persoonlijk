@@ -1,7 +1,7 @@
 import styles from "./Comments.module.css";
 import React, { useEffect, useRef, useState } from 'react';
 
-const Comments = ({ comments = [] }) => {
+const Comments = ({ comments = [], sender }) => {
 
   const messagesRef = useRef(null);
   const scrollToBottom = () => {
@@ -21,7 +21,7 @@ const Comments = ({ comments = [] }) => {
 
   return (
     <>
-      <h3 className={styles.title}>Chat</h3>
+      <h3 className={styles.title}>{sender}</h3>
       <section className={styles.messages} id="ul">
         <ul className={styles.ul}>
           {
