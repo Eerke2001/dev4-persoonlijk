@@ -53,11 +53,22 @@
 }
 
 .up{
-    background-color: green;
+     animation: up 0.5s ease-in-out;
 }
 
 .down{
-    background-color: red;
+    animation: down 0.5s ease-in-out;
+    transform: translateY(330px);
+}
+
+@keyframes up {
+    0%{transform: translateY(330px);}
+    100%{transform: translateY(0px);}
+}
+
+@keyframes down {
+    0%{transform: translateY(0px);}
+    100%{transform: translateY(330px);}
 }
 
 .ul{

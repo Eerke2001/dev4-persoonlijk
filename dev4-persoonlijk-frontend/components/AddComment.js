@@ -2,7 +2,7 @@ import styles from "./AddComment.module.css";
 import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const AddComment = ({ onSubmit }) => {
+const AddComment = ({ onSubmit, slideValue, onSlideValueChange }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = {
@@ -14,6 +14,12 @@ const AddComment = ({ onSubmit }) => {
     console.log(data);
   };
 
+  const getClick = () => {
+    slideValue === 1 ? slideValue += 1 : slideValue -= 1
+    onSlideValueChange(slideValue);
+    console.log(slideValue);
+  }
+
   return (
     <section>
       <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
@@ -24,7 +30,7 @@ const AddComment = ({ onSubmit }) => {
           <label>
             <textarea placeholder="Aa" className={styles.textarea} name="content" required maxLength="500"></textarea>
           </label>
-          <button className={styles.submit} type="submit">
+          <button className={styles.submit} type="submit" value={slideValue} onClick={getClick}>
             <FontAwesomeIcon icon={faPaperPlane} />
           </button>
         </div>

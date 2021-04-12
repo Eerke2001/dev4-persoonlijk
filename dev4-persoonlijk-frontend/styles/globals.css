@@ -31,6 +31,12 @@ a {
   color: grey;
 }
 
+.fa-sort-up{
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  color: grey;
+}
+
 button:focus, input:focus, textarea:focus {
   outline-width: 0;
 }

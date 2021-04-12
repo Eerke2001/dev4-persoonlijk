@@ -18,6 +18,8 @@ const Article = ({ data }) => {
 
   const [sorting, setSorting] = useState(`up`);
 
+  const [slider, setSlider] = useState(1);
+
   const handleSubmit = async (comment) => {
     //console.log(comment);
     comment.article = data.id;
@@ -44,20 +46,19 @@ const Article = ({ data }) => {
       <>
         <h2>{data.title}</h2>
         <ReactMarkdown source={data.content} escapeHtml={false} />
+        {console.log(slider)}
         {sorting === `up` ?
           <div className={`${styles.chat} ${styles.up}`}>
-            {console.log(sorting)}
-            <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} />
-            <AddComment onSubmit={handleSubmit} />
+            <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} slideValue={slider} />
+            <AddComment onSubmit={handleSubmit} slideValue={slider} onSlideValueChange={slideValue => setSlider(slideValue)} />
           </div>
-        :
+          :
           <div className={`${styles.chat} ${styles.down}`}>
-            {console.log(sorting)}
-            <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} />
-            <AddComment onSubmit={handleSubmit} />
+            <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} slideValue={slider} />
+            <AddComment onSubmit={handleSubmit} slideValue={slider} onSlideValueChange={slideValue => setSlider(slideValue)} />
           </div>
         }
-        
+
       </>
     </Layout>
   );
