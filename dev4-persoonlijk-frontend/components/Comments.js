@@ -4,7 +4,7 @@ import { faSortDown } from '@fortawesome/free-solid-svg-icons';
 import { faSortUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const Comments = ({ comments = [], sender }) => {
+const Comments = ({ comments = [], sender, value, onValueChange }) => {
 
   const messagesRef = useRef(null);
   const scrollToBottom = () => {
@@ -22,13 +22,18 @@ const Comments = ({ comments = [], sender }) => {
     }
   }, []);
 
+  const sortChanging = () => {
+    value === `up` ? value = `down` : value = `up`;
+    onValueChange(value);
+  }
+
   return (
     <>
       <div className={`${styles.sort}`}>
         <h3 className={styles.title}>{sender}</h3>
-        <div className={`${styles.sortButton}`}>
+        <button className={`${styles.sortButton}`} value={value} onClick={sortChanging}>
           <FontAwesomeIcon icon={faSortDown} />
-        </div>
+        </button>
       </div>
       <section className={styles.messages} id="ul">
         <ul className={styles.ul}>

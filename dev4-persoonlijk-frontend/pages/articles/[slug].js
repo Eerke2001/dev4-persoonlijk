@@ -16,6 +16,8 @@ const Article = ({ data }) => {
   const [comments, setComments] = useState(data.comments);
   //console.log(comments);
 
+  const [sorting, setSorting] = useState(`up`);
+
   const handleSubmit = async (comment) => {
     //console.log(comment);
     comment.article = data.id;
@@ -42,10 +44,20 @@ const Article = ({ data }) => {
       <>
         <h2>{data.title}</h2>
         <ReactMarkdown source={data.content} escapeHtml={false} />
-        <div className={`${styles.chat}`}>
-          <Comments comments={comments} sender={data.sender} />
-          <AddComment onSubmit={handleSubmit} />
-        </div>
+        {sorting === `up` ?
+          <div className={`${styles.chat} ${styles.up}`}>
+            {console.log(sorting)}
+            <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} />
+            <AddComment onSubmit={handleSubmit} />
+          </div>
+        :
+          <div className={`${styles.chat} ${styles.down}`}>
+            {console.log(sorting)}
+            <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} />
+            <AddComment onSubmit={handleSubmit} />
+          </div>
+        }
+        
       </>
     </Layout>
   );
