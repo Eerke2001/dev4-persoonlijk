@@ -56,7 +56,7 @@ const Comments = ({ comments = [], sender, value, onValueChange, slideValue }) =
                   <p className={styles.liName}>{comment.name}</p>
                   <p className={styles.p}>{comment.content}</p>
                 </li> :
-                <li ref={messagesRef} className={`${styles.li} ${styles.testbg}`} key={comment.id}>
+                <li ref={messagesRef} className={`${styles.li} ${styles.extraMar}`} key={comment.id}>
                   {console.log(messagesRef.current)}
                   <p className={styles.liName}>{comment.name}</p>
                   <p className={styles.p}>{comment.content}</p>

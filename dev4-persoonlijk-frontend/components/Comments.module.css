@@ -58,21 +58,22 @@
 
 .down{
     animation: down 0.5s ease-in-out;
-    transform: translateY(330px);
+    transform: translateY(355px);
 }
 
 @keyframes up {
-    0%{transform: translateY(330px);}
+    0%{transform: translateY(355px);}
     100%{transform: translateY(0px);}
 }
 
 @keyframes down {
     0%{transform: translateY(0px);}
-    100%{transform: translateY(330px);}
+    100%{transform: translateY(355px);}
 }
 
 .ul{
     padding: 0rem;
+    margin: 0rem;
 }
 
 .p{
