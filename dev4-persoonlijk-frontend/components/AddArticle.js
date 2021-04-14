@@ -25,6 +25,11 @@ const AddArticle = ({ onSubmit }) => {
 
     return (
         <section className={styles.section}>
+            <div>
+                <p className={styles.info}>De ontvanger zal jouw boodschap in de vorm van een ei krijgen waarin jouw boodschap verstopt zit.</p>
+                <p className={styles.info}>Om de boodschap te kunnen lezen, moet de ontvanger 50 keer op het ei klikken.</p>
+                <p className={styles.info}>Daarna zal het ei uitkomen, en wordt de boodschap zichtbaar.</p>
+            </div>
             <h3>Maak een boodschap</h3>
 
             <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>

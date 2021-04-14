@@ -20,6 +20,12 @@
     
 }
 
+.info{
+    margin: 0rem;
+    line-height: 120%;
+    font-size: 0.9rem;
+}
+
 .submit{
     border: none;
     background-color: #0070f3;

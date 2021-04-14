@@ -5,6 +5,7 @@ import AddComment from "../../components/AddComment";
 import ReactMarkdown from "react-markdown";
 import { useRouter } from "next/router";
 import styles from "../../components/Comments.module.css";
+import SlugHead from "../../components/SlugHead.js";
 // dit is een aanpassing
 
 const Article = ({ data }) => {
@@ -14,11 +15,10 @@ const Article = ({ data }) => {
   }
 
   const [comments, setComments] = useState(data.comments);
-  //console.log(comments);
-
-  const [sorting, setSorting] = useState(`up`);
-
+  const [sorting, setSorting] = useState(`down`);
   const [slider, setSlider] = useState(1);
+  const [eggClick, setEggClick] = useState(0);
+
 
   const handleSubmit = async (comment) => {
     //console.log(comment);
@@ -44,9 +44,8 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <>
-        <h2>{data.title}</h2>
+        <SlugHead title={data.title} value={eggClick} onValueChange={value => setEggClick(value)} />
         <ReactMarkdown source={data.content} escapeHtml={false} />
-        {console.log(slider)}
         {sorting === `up` ?
           <div className={`${styles.chat} ${styles.up}`}>
             <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} slideValue={slider} />

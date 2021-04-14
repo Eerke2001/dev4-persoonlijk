@@ -36,7 +36,6 @@ export default function Home({ data }) {
   return (
     <Layout>
       <AddArticle onSubmit={handleSubmit}></AddArticle>
-      <p>{process.env.NEXT_PUBLIC_DEMO}</p>
       <Articles articles={articles} />
     </Layout>
   );
