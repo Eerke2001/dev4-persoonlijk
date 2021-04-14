@@ -13,8 +13,12 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
         <>
             {value >= 15 ?
                 <>
-                    <h2>{title}</h2>
-                    <p>{content}</p>
+                    <div className={styles.eggHatchingDiv}>
+                    </div>
+                    <div className={styles.eggHatchingContent}>
+                        <h2>{title}</h2>
+                        <p>{content}</p>
+                    </div>
                 </> :
                 <>
                     <div className={styles.eggContainer}>
