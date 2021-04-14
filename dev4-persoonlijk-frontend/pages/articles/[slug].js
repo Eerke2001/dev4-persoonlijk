@@ -44,8 +44,8 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <>
-        <SlugHead title={data.title} value={eggClick} onValueChange={value => setEggClick(value)} />
-        <ReactMarkdown source={data.content} escapeHtml={false} />
+        <SlugHead title={data.title} content={data.content} value={eggClick} onValueChange={value => setEggClick(value)} />
+        {/* <ReactMarkdown source={data.content} escapeHtml={false} /> */}
         {sorting === `up` ?
           <div className={`${styles.chat} ${styles.up}`}>
             <Comments comments={comments} sender={data.sender} value={sorting} onValueChange={value => setSorting(value)} slideValue={slider} />

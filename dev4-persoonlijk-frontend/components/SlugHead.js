@@ -1,7 +1,7 @@
 import styles from "./SlugHead.module.css";
 import React, { useEffect, useRef, useState } from 'react';
 
-const SlugHead = ({ title, value, onValueChange }) => {
+const SlugHead = ({ title, content, value, onValueChange }) => {
 
     const clickEgg = () => {
         value++;
@@ -11,8 +11,30 @@ const SlugHead = ({ title, value, onValueChange }) => {
 
     return (
         <>
-            <button className={styles.egg} value={value} onClick={clickEgg}></button>
-            <h2>{title}</h2>
+            {value >= 15 ?
+                <>
+                    <h2>{title}</h2>
+                    <p>{content}</p>
+                </> :
+                <>
+                    <div className={styles.eggContainer}>
+                        <div className={styles.eggGrid}>
+                            <div className={styles.egg} onClick={clickEgg}>
+                                {
+                                    value >= 10 ?
+                                        <div className={styles.hatchTwo}></div> :
+                                        value >= 5 ?
+                                            <div className={styles.hatchOne}></div> :
+                                            value >= 2 ?
+                                                <div className={styles.hatchZero}></div> :
+                                                <div></div>
+                                }
+                            </div>
+                            <div className={styles.eggUnder}></div>
+                        </div>
+                    </div>
+                    <h2>Hatch the egg!</h2>
+                </>}
         </>
     );
 };

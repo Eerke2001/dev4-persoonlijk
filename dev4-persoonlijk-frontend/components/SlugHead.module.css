@@ -6,6 +6,94 @@
     border-radius: 70% 25% 55% 50% / 55% 25% 70% 50%;
     border: 5px solid #1c446b;
     transform: rotate(-45deg);
-    margin-top: 30px;
-    background: #ffc000;
+    background: rgba(255, 192, 0, 0.1);
+    animation: moving-egg 4s infinite ease-in-out;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 10;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.eggUnder{
+    width: 15rem;
+    height: 15rem;
+    border-radius: 70% 25% 55% 50% / 55% 25% 70% 50%;
+    transform: rotate(-45deg);
+    background: rgba(255, 192, 0, 1);
+    animation: moving-egg 4s infinite ease-in-out;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    z-index: 9;
+}
+
+.eggGrid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: flex-end;
+    justify-items: center;
+}
+
+.eggContainer{
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+@keyframes moving-egg {
+    0% {
+        transform: rotate(-45deg);
+        width: 15rem;
+        height: 15rem;
+        margin-bottom: 0rem;
+    }
+    3%{
+
+    }
+    5% {
+        transform: rotate(-30deg);
+        
+    }
+    7.5%{
+        width: 14.5rem;
+        height: 14.5rem;
+    }
+    10% {
+        transform: rotate(-60deg);
+    }
+    12%{
+
+    }
+    15% {
+        transform: rotate(-45deg);
+        width: 15rem;
+        height: 15rem;
+        margin-bottom: 0rem;
+    }
+    100% {}
+}
+
+/*--------------------------- hatches ---------------------------*/
+
+.hatchZero{
+    background-image: url("../assets/images/hatch-00.png");
+    width: 42px;
+    height: 42px;
+    margin: 0.9rem;
+}
+
+.hatchOne{
+    background-image: url("../assets/images/hatch-01.png");
+    width: 79px;
+    height: 79px;
+    margin: 0.9rem;
+}
+
+.hatchTwo{
+    background-image: url("../assets/images/hatch-02.png");
+    width: 103px;
+    height: 103px;
+    margin: 0.9rem;
 }
