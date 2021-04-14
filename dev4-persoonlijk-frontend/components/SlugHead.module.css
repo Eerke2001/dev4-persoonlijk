@@ -1,7 +1,11 @@
 /*---------------------- EGG -----------------------*/
 
 .egg{
-    width: 2rem;
-    height: 2rem;
-    background-color: red;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 70% 25% 55% 50% / 55% 25% 70% 50%;
+    border: 5px solid #1c446b;
+    transform: rotate(-45deg);
+    margin-top: 30px;
+    background: #ffc000;
 }
