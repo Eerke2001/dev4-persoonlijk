@@ -13,11 +13,19 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
         <>
             {value >= 15 ?
                 <>
-                    <div className={styles.eggHatchingDiv}>
-                    </div>
-                    <div className={styles.eggHatchingContent}>
-                        <h2>{title}</h2>
-                        <p>{content}</p>
+                    <div className={styles.eggContainer}>
+                        <div className={styles.eggHatchingDiv}></div>
+                        <div className={styles.showEggGrid}>
+                            <div className={styles.eggHatchingContent}>
+                                <h2>{title}</h2>
+                                <p>{content}</p>
+                            </div>
+                            <div className={`${styles.fadeEgg}`}>
+                                <div className={`${styles.egg} ${styles.yellowEgg}`}>
+                                    <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </> :
                 <>
@@ -37,7 +45,7 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
                             <div className={styles.eggUnder}></div>
                         </div>
                     </div>
-                    <h2>Hatch the egg!</h2>
+                    <h2 className={styles.yellowTitle}>Hatch the egg!</h2>
                 </>}
         </>
     );
