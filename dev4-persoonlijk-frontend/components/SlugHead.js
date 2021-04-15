@@ -1,4 +1,5 @@
 import styles from "./SlugHead.module.css";
+import Sparkles from "./Sparkles.js";
 import React, { useEffect, useRef, useState } from 'react';
 
 const SlugHead = ({ title, content, value, onValueChange }) => {
@@ -8,6 +9,12 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
         onValueChange(value);
         console.log(value);
     }
+
+    const draw = (ctx, frameCount, bollen) => {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+        bollen.forEach(bol => bol.draw());
+    }
+
 
     return (
         <>
@@ -37,7 +44,7 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
                                         <div className={styles.hatchTwo}></div> :
                                         value >= 5 ?
                                             <div className={styles.hatchOne}></div> :
-                                            value >= 2 ?
+                                            value >= 1 ?
                                                 <div className={styles.hatchZero}></div> :
                                                 <div></div>
                                 }
@@ -46,6 +53,9 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
                         </div>
                     </div>
                     <h2 className={styles.yellowTitle}>Hatch the egg!</h2>
+
+                    <Sparkles draw={draw} />
+
                 </>}
         </>
     );

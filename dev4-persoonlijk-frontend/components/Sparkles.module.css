@@ -1,0 +1,18 @@
+.sparkGrid{
+    width: 200px;
+    height: 200px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template: repeat(5, 1fr) / repeat(5, 1fr) ;
+}
+
+.spark{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.animate{
+    transform: scale();
+}
