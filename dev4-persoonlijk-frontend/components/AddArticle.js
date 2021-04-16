@@ -1,7 +1,15 @@
 import styles from "./AddArticle.module.css";
+import React, { useEffect, useRef, useState } from 'react';
 //import moment from 'moment';
 
 const AddArticle = ({ onSubmit }) => {
+
+    const [slugValue, setSlugValue] = useState('');
+
+    const handleSlugChange = (e) => {
+        setSlugValue(e.target.value);
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -32,26 +40,33 @@ const AddArticle = ({ onSubmit }) => {
             </div>
             <h3>Maak een boodschap</h3>
 
-            <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
-                <div>
-                    <label className={styles.label}>
-                        Jouw naam:
-          <input type="text" name="sender" />
-                    </label>
-                    <label className={styles.label}>
-                        Titel boodschap:
-          <input type="text" name="title" required />
-                    </label>
-                    <label className={styles.label}>
-                        Description:
-          <textarea name="description" required maxLength="500"></textarea>
-                    </label>
-                    <label className={styles.label}>
-                        Content:
+            <form onSubmit={(e) => handleSubmit(e)} >
+
+                <label className={`${styles.label}`}>
+                    <input className={`${styles.nameInput}`} type="text" name="sender" placeholder="Jouw naam" />
+                </label>
+                <div className={styles.form}>
+                    <div>
+                        <label className={`${styles.label} ${styles.messageLabel}`}>
+                            Titel boodschap:
+          <input className={`${styles.titleInput}`} type="text" name="title" onChange={handleSlugChange} value={slugValue} required />
+                        </label>
+                        <label className={`${styles.label} ${styles.messageLabel}`}>
+                            Description:
+          <textarea className={styles.textarea} name="description" required maxLength="500"></textarea>
+                        </label>
+                        <label className={`${styles.label} ${styles.messageLabel}`}>
+                            Content:
           <textarea name="content" required maxLength="500"></textarea>
-                    </label>
+                        </label>
+                    </div>
+                    {slugValue ?
+                        <p>{slugValue.split(" ").join("-")}</p> :
+                        <p></p>
+                    }
+
+                    <input className={styles.submit} type="submit" value="Create message" />
                 </div>
-                <input className={styles.submit} type="submit" value="Create message" />
             </form>
         </section>
     );
