@@ -17,8 +17,6 @@ const SlugHead = ({ title, content, value, onValueChange, draw }) => {
 
     function copyToClipboard(e) {
 
-        setCopySuccess('');
-
         urlRef.current.value = window.location.href;
         urlRef.current.select();
 
@@ -26,6 +24,7 @@ const SlugHead = ({ title, content, value, onValueChange, draw }) => {
         // This is just personal preference.
         // I prefer to not show the whole text area selected.
         e.target.focus();
+
         setCopySuccess('Copied!');
         console.log(copySuccess);
         console.log(window.location.href);
@@ -35,7 +34,7 @@ const SlugHead = ({ title, content, value, onValueChange, draw }) => {
         <>
             {copySuccess === 'Copied!' ?
                 <div className={styles.copiedMessage}>
-                    You copied the link!
+                    Link copied to clipboard!
                 </div> :
                 <div>
                 </div>
@@ -45,7 +44,7 @@ const SlugHead = ({ title, content, value, onValueChange, draw }) => {
                 <FontAwesomeIcon icon={faCut} />
             </div>
             <form style={{ position: 'absolute', top: '0px', left: '0px', opacity: 0, zIndex: -10 }}>
-                <input ref={urlRef} value=''></input>
+                <input ref={urlRef} value='' readOnly></input>
             </form>
             {value >= 15 ?
                 <>
