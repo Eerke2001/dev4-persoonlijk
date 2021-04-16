@@ -29,6 +29,10 @@ const AddArticle = ({ onSubmit }) => {
         e.target.reset();
         onSubmit(data);
         console.log(data);
+
+        window.location.href = `/articles/${slugValue.split(" ").join("-")}`;
+        //console.log(process.env.NEXT_PAGE_URL);
+
     };
 
     return (
