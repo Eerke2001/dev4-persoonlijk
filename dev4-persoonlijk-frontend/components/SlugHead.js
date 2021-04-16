@@ -2,19 +2,13 @@ import styles from "./SlugHead.module.css";
 import Sparkles from "./Sparkles.js";
 import React, { useEffect, useRef, useState } from 'react';
 
-const SlugHead = ({ title, content, value, onValueChange }) => {
+const SlugHead = ({ title, content, value, onValueChange, draw }) => {
 
     const clickEgg = () => {
         value++;
         onValueChange(value);
         console.log(value);
     }
-
-    const draw = (ctx, frameCount, bollen) => {
-        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-        bollen.forEach(bol => bol.draw());
-    }
-
 
     return (
         <>
@@ -34,6 +28,7 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
                             </div>
                         </div>
                     </div>
+                    <Sparkles draw={draw} />
                 </> :
                 <>
                     <div className={styles.eggContainer}>
@@ -52,9 +47,7 @@ const SlugHead = ({ title, content, value, onValueChange }) => {
                             <div className={styles.eggUnder}></div>
                         </div>
                     </div>
-                    <h2 className={styles.yellowTitle}>Hatch the egg!</h2>
-
-                    <Sparkles draw={draw} />
+                    <h2 className={styles.hatchTitle}>Hatch the egg!</h2>
 
                 </>}
         </>

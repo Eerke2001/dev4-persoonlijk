@@ -20,7 +20,7 @@ const Sparkles = props => {
         let bollen = [];
 
         const createBols = () => {
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 20; i++) {
                 const bol = new Bol(canvas, Math.random() * canvas.width, Math.random() * canvas.height);
                 bollen.push(bol);
             }
@@ -40,8 +40,6 @@ const Sparkles = props => {
         }
 
     }, [draw])
-
-    const colorArray = [`#9cffbe`, `#ff85ad`, `#f4b5ff`, `#9cf3ff`, `#96b6ff`];
 
     return (
         <>

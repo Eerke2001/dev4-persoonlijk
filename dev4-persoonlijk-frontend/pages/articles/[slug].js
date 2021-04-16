@@ -8,6 +8,12 @@ import styles from "../../components/Comments.module.css";
 import SlugHead from "../../components/SlugHead.js";
 // dit is een aanpassing
 
+// draw functie bovenaan om te voorkomen dat hij re-renderd
+const draw = (ctx, frameCount, bollen) => {
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+  bollen.forEach(bol => bol.draw());
+}
+
 const Article = ({ data }) => {
   const router = useRouter();
   if (router.isFallback) {
@@ -44,7 +50,7 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <>
-        <SlugHead title={data.title} content={data.content} value={eggClick} onValueChange={value => setEggClick(value)} />
+        <SlugHead title={data.title} content={data.content} value={eggClick} onValueChange={value => setEggClick(value)} draw={draw} />
         {/* <ReactMarkdown source={data.content} escapeHtml={false} /> */}
         {sorting === `up` ?
           <div className={`${styles.chat} ${styles.up}`}>

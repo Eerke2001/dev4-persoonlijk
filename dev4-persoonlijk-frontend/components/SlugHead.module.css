@@ -118,8 +118,8 @@
     100% {}
 }
 
-.yellowTitle{
-    color: rgb(255, 123, 0);
+.hatchTitle{
+    color: #1c446b;
 }
 
 /*---------------------------------------------------------------*/
@@ -132,6 +132,7 @@
     top: 0;
     animation: sparkless 1s ease-in-out;
     z-index: -1;
+    display: none;
 }
 
 @keyframes sparkles {
