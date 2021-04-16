@@ -177,3 +177,40 @@
     height: 103px;
     margin: 0.9rem;
 }
+
+/**/
+
+.urlButton{
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: white;
+    box-shadow: 0px 0px 20px -3px #b6b6b6;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+}
+
+.copiedMessage{
+    position: absolute;
+    top: -40px;
+    background-color: white;
+    padding: 0.6rem 1rem 0.6rem 1rem;
+    z-index: 19;
+    border-radius: 3rem;
+    animation: clicked-copy 3s ease-in-out;
+}
+
+@keyframes clicked-copy {
+    0%{top: -40px;}
+    15%{top: 15px;}
+    85%{top: 15px;}
+    100%{top: -40px;}
+}
+
+/**/

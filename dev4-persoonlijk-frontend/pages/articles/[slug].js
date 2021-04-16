@@ -47,6 +47,7 @@ const Article = ({ data }) => {
     }
   };
 
+
   return (
     <Layout>
       <>
