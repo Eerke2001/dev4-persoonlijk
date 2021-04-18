@@ -45,3 +45,23 @@ a {
 button:focus, input:focus, textarea:focus {
   outline-width: 0;
 }
+
+.link-i{
+  position: absolute;
+  top: -40px;
+  background-color: white;
+  padding: 0.6rem 1rem 0.6rem 1rem;
+  z-index: 19;
+  border-radius: 3rem;
+}
+
+.copied-link{
+    animation: clicked-copy 3s ease-in-out;
+}
+
+@keyframes clicked-copy {
+    0%{top: -40px;}
+    15%{top: 15px;}
+    85%{top: 15px;}
+    100%{top: -40px;}
+}

@@ -14,11 +14,23 @@ const SlugHead = ({ title, content, value, onValueChange, draw }) => {
 
     const [copySuccess, setCopySuccess] = useState('');
     const urlRef = useRef(null);
+    const copyRef = useRef(null);
+    const copyNewRef = useRef(null);
 
     function copyToClipboard(e) {
 
         urlRef.current.value = window.location.href;
         urlRef.current.select();
+
+        if (copyRef.current.className === 'link-i copied-link') {
+            copyRef.current.className = 'link-i';
+            copyNewRef.current.className = 'link-i copied-link';
+        } else {
+            copyRef.current.className = 'link-i copied-link';
+            copyNewRef.current.className = 'link-i';
+        }
+
+        //console.log(copyRef.current.className);
 
         document.execCommand('copy');
         // This is just personal preference.
@@ -26,19 +38,18 @@ const SlugHead = ({ title, content, value, onValueChange, draw }) => {
         e.target.focus();
 
         setCopySuccess('Copied!');
-        console.log(copySuccess);
-        console.log(window.location.href);
+        //console.log(copySuccess);
+        //console.log(window.location.href);
     };
 
     return (
         <>
-            {copySuccess === 'Copied!' ?
-                <div className={styles.copiedMessage}>
-                    Link copied to clipboard!
-                </div> :
-                <div>
-                </div>
-            }
+            <div ref={copyRef} className="link-i">
+                Link copied to clipboard!
+            </div>
+            <div ref={copyNewRef} className="link-i">
+                Link copied to clipboard!
+            </div>
 
             <div className={styles.urlButton} onClick={copyToClipboard}>
                 <FontAwesomeIcon icon={faCut} />
