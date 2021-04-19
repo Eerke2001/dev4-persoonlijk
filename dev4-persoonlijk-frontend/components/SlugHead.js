@@ -6,11 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
 
-    
+
     let today = new Date();
     let dateNew;
 
-    if (parseInt(today.getMonth() + 1) < 10){
+    if (parseInt(today.getMonth() + 1) < 10) {
         dateNew = today.getFullYear() + "-" + 0 + parseInt(today.getMonth() + 1) + "-" + today.getDate();
     } else {
         dateNew = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
@@ -25,7 +25,7 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
     }
 
     if (dateNew === date) {
-    console.log(`HEJHMHZEPOFH`)
+        console.log(`HEJHMHZEPOFH`)
     }
 
     console.log(date);
@@ -77,21 +77,50 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
             </form>
             {value >= 15 ?
                 <>
-                    <div className={styles.eggContainer}>
-                        <div className={styles.eggHatchingDiv}></div>
-                        <div className={styles.showEggGrid}>
-                            <div className={styles.eggHatchingContent}>
-                                <h2>{title}</h2>
-                                <p>{content}</p>
+                    {dateNew !== date ?
+                        <>
+                            <div className={styles.chickenDivComplete}>
+                                <div className={styles.featherTwo}></div>
+                                <div className={styles.fingOne}></div>
+                                <div className={styles.fingTwo}></div>
+                                <div className={styles.legOne}></div>
+                                <div className={styles.legTwo}></div>
+                                <div className={styles.chickenLegBolTwo}></div>
+                                <div className={styles.chickenLegBolOne}></div>
+                                <div className={styles.chickenHead}></div>
+                                <div className={styles.chickenBody}></div>
+                                <div className={styles.beakOne}></div>
+                                <div className={styles.chickenEye}>
+                                    <div className={styles.eyeShine}></div>
+                                </div>
+                                <div className={styles.feather}></div>
+                                <div className={styles.chickenFeather}></div>
                             </div>
-                            <div className={`${styles.fadeEgg}`}>
-                                <div className={`${styles.egg} ${styles.yellowEgg}`}>
-                                    <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                            <div className={styles.eggHatchingContent}>
+                                <p className={styles.huh}>Huh? Een kuiken?</p>
+                                <p className={styles.faster}>Je zal de volgende keer de boodschap wat eerder moeten uitbroeden!</p>
+                            </div>
+
+                            <Sparkles draw={draw} />
+                        </> :
+                        <>
+                            <div className={styles.eggContainer}>
+                                <div className={styles.eggHatchingDiv}></div>
+                                <div className={styles.showEggGrid}>
+                                    <div className={styles.eggHatchingContent}>
+                                        <h2>{title}</h2>
+                                        <p>{content}</p>
+                                    </div>
+                                    <div className={`${styles.fadeEgg}`}>
+                                        <div className={`${styles.egg} ${styles.yellowEgg}`}>
+                                            <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <Sparkles draw={draw} />
+                            <Sparkles draw={draw} />
+                        </>
+                    }
                 </> :
                 <>
                     <div className={styles.eggContainer}>

@@ -147,11 +147,14 @@
     grid-column-start: 1;
     grid-row-start: 1;
     transform: scale(1, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @keyframes fade-in {
     0%{opacity: 0; transform: scale(0.1, 0.1);}
-    60%{opacity: 1; transform: scale(1.5, 1.5);}
+    60%{opacity: 1; transform: scale(1.4, 1.4);}
     100%{transform: scale(1, 1);}
 }
 
@@ -213,4 +216,179 @@
     100%{top: -40px;}
 }
 
-/**/
+.huh{
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: rgb(83, 83, 83);
+    margin-bottom: 0.5rem;
+}
+
+.faster{
+    margin: 0rem;
+    color: rgb(83, 83, 83);
+    font-size: 0.9rem;
+}
+
+/*-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-*/
+/*-()------------------------------- CHICKEN DIV --------------------------------()-*/
+/*-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-()-*/
+
+.chickenDivComplete{
+    width: 10rem;
+    height: 10.6rem;
+    z-index: 20;
+    margin-top: 5rem;
+    animation: chicken-fade-in 1.3s ease-in-out;
+}
+
+@keyframes chicken-fade-in {
+    0%{opacity: 0; transform: scale(0.1, 0.1);}
+    60%{opacity: 1; transform: scale(1.1, 1.1);}
+    100%{transform: scale(1, 1);}
+}
+
+.chickenHead{
+    width: 6rem;
+    height: 6rem;
+    background-color: rgba(255, 192, 0, 1);
+    /* border: 5px solid #1c446b; */
+    border-radius: 100%;
+    position: absolute;
+}
+
+.chickenBody{
+    width: 10rem;
+    height: 6rem;
+    background-color: rgba(255, 192, 0, 1);
+    /* border: 5px solid #1c446b; */
+    border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px;
+    border-top: 0;
+    position: absolute;
+    margin-top: 3rem;
+}
+
+.chickenEye{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #12304e;
+    border: 0.2rem solid white;
+    border-radius: 100%;
+    margin-top: 1.5rem;
+    margin-left: 1.3rem;
+}
+
+.eyeShine{
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 100%;
+    margin: 0.2rem;
+}
+
+.beakOne{
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 20px solid rgb(255, 102, 0);
+    border-bottom: 10px solid transparent;
+    position: absolute;
+    margin-top: 2.5rem;
+    margin-left: -10px;
+}
+
+.feather{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgba(255, 192, 0, 1);
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    margin-top: -0.5rem;
+    margin-left: 1rem;
+    transform: rotate(-30deg);
+}
+
+.featherTwo{
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(255, 212, 71);
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    margin-top: -0.5rem;
+    margin-left: 1.5rem;
+    transform: rotate(-10deg);
+}
+
+.chickenLegBolOne{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(255, 192, 0);
+    position: absolute;
+    border-radius: 100%;
+    margin-top: 8rem;
+    margin-left: 5rem;
+}
+
+.chickenLegBolTwo{
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(255, 212, 71);
+    position: absolute;
+    border-radius: 100%;
+    margin-top: 7.9rem;
+    margin-left: 3rem;
+}
+
+.legOne{
+    width: 5px;
+    height: 24px;
+    background-color: rgb(255, 102, 0);
+    position: absolute;
+    margin-top: 9rem;
+    margin-left: 3.5rem;
+}
+
+.legTwo{
+    width: 5px;
+    height: 24px;
+    background-color: rgb(255, 102, 0);
+    position: absolute;
+    margin-top: 9rem;
+    margin-left: 5.5rem;
+}
+
+.fingOne{
+    width: 15px;
+    height: 5px;
+    background-color: rgb(255, 102, 0);
+    position: absolute;
+    margin-top: 10.2rem;
+    margin-left: 3.1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.fingTwo{
+    width: 15px;
+    height: 5px;
+    background-color: rgb(255, 102, 0);
+    position: absolute;
+    margin-top: 10.2rem;
+    margin-left: 5.1rem;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+
+.chickenFeather{
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    background-color: rgb(255, 212, 71);
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    margin-top: 2.5rem;
+    margin-left: 4rem;
+}
