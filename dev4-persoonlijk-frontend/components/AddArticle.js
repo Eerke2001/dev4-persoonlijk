@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 const AddArticle = ({ onSubmit }) => {
 
     const [slugValue, setSlugValue] = useState('');
+    const currentDate = new Date();
 
     const handleSlugChange = (e) => {
         setSlugValue(e.target.value);
@@ -23,14 +24,17 @@ const AddArticle = ({ onSubmit }) => {
             content: e.target.content.value,
             status: 'published',
             slug: e.target.title.value.split(" ").join("-"),
-            sender: e.target.sender.value
+            sender: e.target.sender.value,
+            date: currentDate
         };
-        console.log(data.slug);
+
+        console.log(currentDate);
+        console.log(data.date);
         e.target.reset();
         onSubmit(data);
         console.log(data);
 
-        window.location.href = `/articles/${slugValue.split(" ").join("-")}`;
+        //window.location.href = `/articles/${slugValue.split(" ").join("-")}`;
         //console.log(process.env.NEXT_PAGE_URL);
 
     };

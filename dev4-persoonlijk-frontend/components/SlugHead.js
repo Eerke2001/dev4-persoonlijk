@@ -4,13 +4,31 @@ import React, { useEffect, useRef, useState } from 'react';
 import { faCut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SlugHead = ({ title, content, value, onValueChange, draw }) => {
+const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
+
+    
+    let today = new Date();
+    let dateNew;
+
+    if (parseInt(today.getMonth() + 1) < 10){
+        dateNew = today.getFullYear() + "-" + 0 + parseInt(today.getMonth() + 1) + "-" + today.getDate();
+    } else {
+        dateNew = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
+    }
+
+    console.log(dateNew);
 
     const clickEgg = () => {
         value++;
         onValueChange(value);
         console.log(value);
     }
+
+    if (dateNew === date) {
+    console.log(`HEJHMHZEPOFH`)
+    }
+
+    console.log(date);
 
     const [copySuccess, setCopySuccess] = useState('');
     const urlRef = useRef(null);

@@ -51,6 +51,9 @@
     },
     "sender": {
       "type": "string"
+    },
+    "date": {
+      "type": "date"
     }
   }
 }
