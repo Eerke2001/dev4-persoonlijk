@@ -15,6 +15,7 @@ const draw = (ctx, frameCount, bollen) => {
 }
 
 const Article = ({ data }) => {
+
   const router = useRouter();
   if (router.isFallback) {
     return <p>Loading...</p>;

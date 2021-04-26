@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function Home({ data }) {
 
   const [articles, setArticles] = useState(data);
-  //console.log(articles);
+  console.log(articles);
 
   const handleSubmit = async (article) => {
     //console.log(article);
