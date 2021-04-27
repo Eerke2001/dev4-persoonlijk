@@ -1,3 +1,14 @@
+.loadingText{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .label{
     display: grid;
     grid-template-columns: 15ch 1fr;

@@ -18,7 +18,16 @@ const Article = ({ data }) => {
 
   const router = useRouter();
   if (router.isFallback) {
-    return <p>Loading...</p>;
+    return (
+      <>
+        <div style={{ width: "100vw", height: "100vh", position: "absolute", top: "0rem", left: "0rem", display: "flex", justifyContent: "center", alignItems: "center" }}>
+          <div>
+            <p>Loading...</p>
+            <p>Give the chicken a little more time.</p>
+          </div>
+        </div>
+      </>
+    );
   }
 
   const [comments, setComments] = useState(data.comments);
