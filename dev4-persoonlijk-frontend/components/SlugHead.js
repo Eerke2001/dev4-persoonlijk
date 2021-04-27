@@ -159,9 +159,9 @@ const SlugHead = ({ color, date, title, content, value, onValueChange, draw }) =
                                 : color === `green` ?
                                     <div className={`${styles.eggUnder} ${styles.greenEgg}`}></div>
                                     : color === `pink` ?
-                                        <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
+                                        <div className={`${styles.eggUnder} ${styles.pinkEgg}`}></div>
                                         : color === `red` ?
-                                            <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
+                                            <div className={`${styles.eggUnder} ${styles.redEgg}`}></div>
                                             :
                                             <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
                             }
