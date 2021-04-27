@@ -25,7 +25,8 @@ const AddArticle = ({ onSubmit }) => {
             status: 'published',
             slug: e.target.title.value.split(" ").join("-"),
             sender: e.target.sender.value,
-            date: currentDate
+            date: currentDate,
+            color: e.target.color.value
         };
 
         console.log(currentDate);

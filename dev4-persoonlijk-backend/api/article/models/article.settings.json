@@ -54,6 +54,9 @@
     },
     "date": {
       "type": "date"
+    },
+    "color": {
+      "type": "string"
     }
   }
 }

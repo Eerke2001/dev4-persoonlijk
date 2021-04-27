@@ -4,11 +4,12 @@ import React, { useEffect, useRef, useState } from 'react';
 import { faCut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
+const SlugHead = ({ color, date, title, content, value, onValueChange, draw }) => {
 
 
     let today = new Date();
     let dateNew;
+    //console.log(color);
 
     if (parseInt(today.getMonth() + 1) < 10) {
         dateNew = today.getFullYear() + "-" + 0 + parseInt(today.getMonth() + 1) + "-" + today.getDate();
@@ -16,7 +17,7 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
         dateNew = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
     }
 
-    console.log(dateNew);
+    //console.log(dateNew);
 
     const clickEgg = () => {
         value++;
@@ -25,10 +26,10 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
     }
 
     if (dateNew === date) {
-        console.log(`HEJHMHZEPOFH`)
+        //console.log(`HEJHMHZEPOFH`)
     }
 
-    console.log(date);
+    //console.log(date);
 
     const [copySuccess, setCopySuccess] = useState('');
     const urlRef = useRef(null);
@@ -112,9 +113,26 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
                                         <p>{content}</p>
                                     </div>
                                     <div className={`${styles.fadeEgg}`}>
-                                        <div className={`${styles.egg} ${styles.yellowEgg}`}>
+                                        {color === `blue` ?
+                                            <div className={`${styles.egg} ${styles.blueEgg}`}>
+                                                <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                            </div> : color === `green` ?
+                                                <div className={`${styles.egg} ${styles.greenEgg}`}>
+                                                    <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                                </div> : color === `pink` ?
+                                                    <div className={`${styles.egg} ${styles.pinkEgg}`}>
+                                                        <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                                    </div> : color === `red` ?
+                                                        <div className={`${styles.egg} ${styles.redEgg}`}>
+                                                            <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                                        </div> :
+                                                        <div className={`${styles.egg} ${styles.yellowEgg}`}>
+                                                            <div className={`${styles.hatchTwo} ${styles.test}`}></div>
+                                                        </div>
+                                        }
+                                        {/* <div className={`${styles.egg} ${styles.yellowEgg}`}>
                                             <div className={`${styles.hatchTwo} ${styles.test}`}></div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +154,18 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
                                                 <div></div>
                                 }
                             </div>
-                            <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
+                            {color === `blue` ?
+                                <div className={`${styles.eggUnder} ${styles.blueEgg}`}></div>
+                                : color === `green` ?
+                                    <div className={`${styles.eggUnder} ${styles.greenEgg}`}></div>
+                                    : color === `pink` ?
+                                        <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
+                                        : color === `red` ?
+                                            <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
+                                            :
+                                            <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
+                            }
+                            {/* <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div> */}
                         </div>
                     </div>
                     <h2 className={styles.hatchTitle}>Hatch the egg!</h2>
