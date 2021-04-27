@@ -79,6 +79,7 @@
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
   border-bottom-left-radius: 0.7rem;
+  cursor: pointer;
 }
 
 .colorInputText{
@@ -91,12 +92,17 @@
     font-size: 0.9rem;
 }
 
+.eggCol{
+  margin: 1rem 0rem 0rem 0rem;
+}
+
 .submit{
     border: none;
     background-color: #0070f3;
     color: white;
     padding: 0.7rem;
     border-radius: 2rem;
+    cursor: pointer;
 }
 
 .nameInput{

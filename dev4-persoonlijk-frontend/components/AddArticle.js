@@ -7,6 +7,9 @@ const AddArticle = ({ onSubmit }) => {
     const [slugValue, setSlugValue] = useState('');
     const currentDate = new Date();
 
+    const randomNum = Math.floor(Math.random() * 100000);
+    //console.log(randomNum);
+
     const handleSlugChange = (e) => {
         setSlugValue(e.target.value);
     }
@@ -18,12 +21,15 @@ const AddArticle = ({ onSubmit }) => {
             e.target.sender.value = 'A good soul';
         }
 
+        const slugCreator = e.target.title.value.split(" ").join("-");
+        const officialSlug = `${slugCreator}-${randomNum}`;
+
         const data = {
             title: e.target.title.value,
             description: e.target.description.value,
             content: e.target.content.value,
             status: 'published',
-            slug: e.target.title.value.split(" ").join("-"),
+            slug: officialSlug,
             sender: e.target.sender.value,
             date: currentDate,
             color: e.target.color.value
@@ -35,7 +41,7 @@ const AddArticle = ({ onSubmit }) => {
         onSubmit(data);
         console.log(data);
 
-        window.location.href = `/articles/${slugValue.split(" ").join("-")}`;
+        window.location.href = `/articles/${officialSlug}`;
         //console.log(process.env.NEXT_PAGE_URL);
 
     };
@@ -66,46 +72,56 @@ const AddArticle = ({ onSubmit }) => {
                             Content:
           <textarea name="content" required maxLength="500"></textarea>
                         </label>
-                        <label className={`${styles.label} ${styles.messageLabel}`}>
-                            Kleur van het ei:
+                        <div className={`${styles.label} ${styles.messageLabel}`}>
+                            <p className={styles.eggCol}>Kleur van het ei:</p>
                             <div className={styles.colorLabel}>
-                                <div className={styles.backColorInput}>
-                                    <div className={styles.colorInputField}>
-                                        <input type="radio" id="yellow" name="color" value="yellow"></input>
-                                        <p className={styles.colorInputText}>geel</p>
+                                <label className={`${styles.label} ${styles.messageLabel}`}>
+                                    <div className={styles.backColorInput}>
+                                        <div className={styles.colorInputField}>
+                                            <input type="radio" id="yellow" name="color" value="yellow"></input>
+                                            <p className={styles.colorInputText}>geel</p>
+                                        </div>
+                                        <div className={styles.yellowEgg}></div>
                                     </div>
-                                    <div className={styles.yellowEgg}></div>
-                                </div>
-                                <div className={styles.backColorInput}>
-                                    <div className={styles.colorInputField}>
-                                        <input type="radio" id="blue" name="color" value="blue"></input>
-                                        <p className={styles.colorInputText}>blauw</p>
+                                </label>
+                                <label className={`${styles.label} ${styles.messageLabel}`}>
+                                    <div className={styles.backColorInput}>
+                                        <div className={styles.colorInputField}>
+                                            <input type="radio" id="blue" name="color" value="blue"></input>
+                                            <p className={styles.colorInputText}>blauw</p>
+                                        </div>
+                                        <div className={styles.blueEgg}></div>
                                     </div>
-                                    <div className={styles.blueEgg}></div>
-                                </div>
-                                <div className={styles.backColorInput}>
-                                    <div className={styles.colorInputField}>
-                                        <input type="radio" id="green" name="color" value="green"></input>
-                                        <p className={styles.colorInputText}>groen</p>
+                                </label>
+                                <label className={`${styles.label} ${styles.messageLabel}`}>
+                                    <div className={styles.backColorInput}>
+                                        <div className={styles.colorInputField}>
+                                            <input type="radio" id="green" name="color" value="green"></input>
+                                            <p className={styles.colorInputText}>groen</p>
+                                        </div>
+                                        <div className={styles.greenEgg}></div>
                                     </div>
-                                    <div className={styles.greenEgg}></div>
-                                </div>
-                                <div className={styles.backColorInput}>
-                                    <div className={styles.colorInputField}>
-                                        <input type="radio" id="pink" name="color" value="pink"></input>
-                                        <p className={styles.colorInputText}>roze</p>
+                                </label>
+                                <label className={`${styles.label} ${styles.messageLabel}`}>
+                                    <div className={styles.backColorInput}>
+                                        <div className={styles.colorInputField}>
+                                            <input type="radio" id="pink" name="color" value="pink"></input>
+                                            <p className={styles.colorInputText}>roze</p>
+                                        </div>
+                                        <div className={styles.pinkEgg}></div>
                                     </div>
-                                    <div className={styles.pinkEgg}></div>
-                                </div>
-                                <div className={styles.backColorInput}>
-                                    <div className={styles.colorInputField}>
-                                        <input type="radio" id="red" name="color" value="red"></input>
-                                        <p className={styles.colorInputText}>rood</p>
+                                </label>
+                                <label className={`${styles.label} ${styles.messageLabel}`}>
+                                    <div className={styles.backColorInput}>
+                                        <div className={styles.colorInputField}>
+                                            <input type="radio" id="red" name="color" value="red"></input>
+                                            <p className={styles.colorInputText}>rood</p>
+                                        </div>
+                                        <div className={styles.redEgg}></div>
                                     </div>
-                                    <div className={styles.redEgg}></div>
-                                </div>
+                                </label>
                             </div>
-                        </label>
+                        </div>
                     </div>
                     {slugValue ?
                         <p>{slugValue.split(" ").join("-")}</p> :
