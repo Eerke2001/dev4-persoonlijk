@@ -7,7 +7,7 @@ const Articles = ({ articles = [] }) => {
 
     return (
         <>
-            <h3>Recent verstuurde berichten:</h3>
+            {/* <h3>Recent verstuurde berichten:</h3>
             <div className={styles.cardDisplay}>
                 {articles.map((article) => (
                     <Link key={article.id} href={`/articles/${article.slug}`}>
@@ -18,7 +18,7 @@ const Articles = ({ articles = [] }) => {
                         </a>
                     </Link>
                 ))}
-            </div>
+            </div> */}
         </>
     );
 };

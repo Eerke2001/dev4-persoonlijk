@@ -67,6 +67,46 @@ const AddArticle = ({ onSubmit }) => {
                             Content:
           <textarea name="content" required maxLength="500"></textarea>
                         </label>
+                        <label className={`${styles.label} ${styles.messageLabel}`}>
+                            Kleur van het ei:
+                            <div className={styles.colorLabel}>
+                                <div className={styles.backColorInput}>
+                                    <div className={styles.colorInputField}>
+                                        <input type="radio" id="yellow" name="color" value="yellow"></input>
+                                        <p className={styles.colorInputText}>geel</p>
+                                    </div>
+                                    <div className={styles.yellowEgg}></div>
+                                </div>
+                                <div className={styles.backColorInput}>
+                                    <div className={styles.colorInputField}>
+                                        <input type="radio" id="blue" name="color" value="blue"></input>
+                                        <p className={styles.colorInputText}>blauw</p>
+                                    </div>
+                                    <div className={styles.blueEgg}></div>
+                                </div>
+                                <div className={styles.backColorInput}>
+                                    <div className={styles.colorInputField}>
+                                        <input type="radio" id="green" name="color" value="green"></input>
+                                        <p className={styles.colorInputText}>groen</p>
+                                    </div>
+                                    <div className={styles.greenEgg}></div>
+                                </div>
+                                <div className={styles.backColorInput}>
+                                    <div className={styles.colorInputField}>
+                                        <input type="radio" id="pink" name="color" value="pink"></input>
+                                        <p className={styles.colorInputText}>roze</p>
+                                    </div>
+                                    <div className={styles.pinkEgg}></div>
+                                </div>
+                                <div className={styles.backColorInput}>
+                                    <div className={styles.colorInputField}>
+                                        <input type="radio" id="red" name="color" value="red"></input>
+                                        <p className={styles.colorInputText}>rood</p>
+                                    </div>
+                                    <div className={styles.redEgg}></div>
+                                </div>
+                            </div>
+                        </label>
                     </div>
                     {slugValue ?
                         <p>{slugValue.split(" ").join("-")}</p> :

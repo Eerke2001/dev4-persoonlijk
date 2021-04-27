@@ -136,7 +136,7 @@ const SlugHead = ({ date, title, content, value, onValueChange, draw }) => {
                                                 <div></div>
                                 }
                             </div>
-                            <div className={styles.eggUnder}></div>
+                            <div className={`${styles.eggUnder} ${styles.yellowEgg}`}></div>
                         </div>
                     </div>
                     <h2 className={styles.hatchTitle}>Hatch the egg!</h2>
