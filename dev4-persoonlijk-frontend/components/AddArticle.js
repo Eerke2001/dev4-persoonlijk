@@ -1,5 +1,6 @@
 import styles from "./AddArticle.module.css";
 import React, { useEffect, useRef, useState } from 'react';
+//import { Image, Video, Transformation, CloudinaryContext } from 'cloudinary-react';
 //import moment from 'moment';
 
 const AddArticle = ({ onSubmit }) => {
@@ -13,6 +14,28 @@ const AddArticle = ({ onSubmit }) => {
     const handleSlugChange = (e) => {
         setSlugValue(e.target.value);
     }
+
+    const [image, setImage] = useState();
+
+
+
+    const uploadFile = async e => {
+        console.log("uploading...");
+        const files = e.target.files;
+        const data = new FormData();
+        data.append('file', files[0]);
+        data.append('upload_preset', 'imgfolder');
+
+        const res = await fetch('https://api.cloudinary.com/v1_1/eerke2001/image/upload', {
+            method: 'POST',
+            body: data
+        });
+
+        const file = await res.json();
+        setImage(file.secure_url);
+        //this.setState({ image: file.secure_url })
+    }
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -32,7 +55,8 @@ const AddArticle = ({ onSubmit }) => {
             slug: officialSlug,
             sender: e.target.sender.value,
             date: currentDate,
-            color: e.target.color.value
+            color: e.target.color.value,
+            image: image
         };
 
         console.log(currentDate);
@@ -122,6 +146,13 @@ const AddArticle = ({ onSubmit }) => {
                                 </label>
                             </div>
                         </div>
+                        <label htmlFor="file" className={`${styles.label} ${styles.messageLabel}`}>
+                            <input type="file" id="file" name="file" placeholder="upload image" required onChange={uploadFile} />
+                            {
+                                image &&
+                                <img width="200" src={image} alt="preview image"></img>
+                            }
+                        </label>
                     </div>
                     {slugValue ?
                         <p>{slugValue.split(" ").join("-")}</p> :
@@ -131,6 +162,7 @@ const AddArticle = ({ onSubmit }) => {
                     <input className={styles.submit} type="submit" value="Create message" />
                 </div>
             </form>
+            <img src="http://res.cloudinary.com/eerke2001/image/upload/sample.jpg"></img>
         </section>
     );
 };

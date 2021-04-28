@@ -61,7 +61,7 @@ const Article = ({ data }) => {
   return (
     <Layout>
       <>
-        <SlugHead color={data.color} date={data.date} title={data.title} content={data.content} value={eggClick} onValueChange={value => setEggClick(value)} draw={draw} />
+        <SlugHead image={data.image} color={data.color} date={data.date} title={data.title} content={data.content} value={eggClick} onValueChange={value => setEggClick(value)} draw={draw} />
         {/* <ReactMarkdown source={data.content} escapeHtml={false} /> */}
         {sorting === `up` ?
           <div className={`${styles.chat} ${styles.up}`}>
