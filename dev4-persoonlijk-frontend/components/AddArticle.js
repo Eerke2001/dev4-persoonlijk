@@ -16,10 +16,10 @@ const AddArticle = ({ onSubmit }) => {
     }
 
     const [image, setImage] = useState();
-
-
+    const [loadingstate, setLoadingstate] = useState('');
 
     const uploadFile = async e => {
+        setLoadingstate('loading image...');
         console.log("uploading...");
         const files = e.target.files;
         const data = new FormData();
@@ -33,6 +33,7 @@ const AddArticle = ({ onSubmit }) => {
 
         const file = await res.json();
         setImage(file.secure_url);
+        setLoadingstate('');
         //this.setState({ image: file.secure_url })
     }
 
@@ -148,11 +149,25 @@ const AddArticle = ({ onSubmit }) => {
                         </div>
                         <label htmlFor="file" className={`${styles.label} ${styles.messageLabel}`}>
                             <input type="file" id="file" name="file" placeholder="upload image" required onChange={uploadFile} />
+                        </label>
+                        <div className={styles.loadingStateDiv}>
                             {
                                 image &&
-                                <img width="200" src={image} alt="preview image"></img>
+                                <img width="500" src={image} alt="preview image"></img>
                             }
-                        </label>
+                            {
+                                loadingstate === "loading image..." &&
+                                <div className={styles.flexLoaders}>
+                                    <p className={styles.loadingState}>loading image...</p>
+                                    <div className={styles.loader}>
+                                        <div className={styles.loadBlue}></div>
+                                        <div className={styles.loadGreen}></div>
+                                        <div className={styles.loadYellow}></div>
+                                        <div className={styles.loadRed}></div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
                     </div>
                     {slugValue ?
                         <p>{slugValue.split(" ").join("-")}</p> :
@@ -162,7 +177,6 @@ const AddArticle = ({ onSubmit }) => {
                     <input className={styles.submit} type="submit" value="Create message" />
                 </div>
             </form>
-            <img src="http://res.cloudinary.com/eerke2001/image/upload/sample.jpg"></img>
         </section>
     );
 };

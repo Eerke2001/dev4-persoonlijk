@@ -9,6 +9,79 @@
   align-items: center;
 }
 
+.loadingState{
+  color: grey;
+}
+
+.loader{
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
+  animation: rotate-loader 1.5s infinite ease-in-out;
+  justify-content: center;
+}
+
+@keyframes rotate-loader {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+.flexLoaders{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loadBlue{
+  width: 10px;
+  height: 10px;
+  background-color: rgb(0, 204, 255);
+  border-radius: 100%;
+  margin: 4px;
+}
+
+.loadGreen{
+  width: 10px;
+  height: 10px;
+  background-color: #ff85ad;
+  border-radius: 100%;
+  margin: 4px;
+}
+
+.loadYellow{
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 192, 0, 1);
+  border-radius: 100%;
+  margin: 4px;
+}
+
+.loadRed{
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 89, 67);
+  border-radius: 100%;
+  margin: 4px;
+}
+
+.loadingStateDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .label{
     display: grid;
     grid-template-columns: 15ch 1fr;
