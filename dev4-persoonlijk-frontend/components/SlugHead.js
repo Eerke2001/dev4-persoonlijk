@@ -111,7 +111,7 @@ const SlugHead = ({ image, color, date, title, content, value, onValueChange, dr
                                     <div className={styles.eggHatchingContent}>
                                         <h2>{title}</h2>
                                         <p>{content}</p>
-                                        <img width="200" src={image} alt="leuke afbeelding"></img>
+                                        <img width="500" src={image} alt="leuke afbeelding"></img>
                                     </div>
                                     <div className={`${styles.fadeEgg}`}>
                                         {color === `blue` ?

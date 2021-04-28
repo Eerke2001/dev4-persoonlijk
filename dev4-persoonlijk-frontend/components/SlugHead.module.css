@@ -76,7 +76,7 @@
 }
 
 .eggContainer{
-    height: 280px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
