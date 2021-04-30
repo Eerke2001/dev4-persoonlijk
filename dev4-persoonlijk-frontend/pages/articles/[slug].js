@@ -1,6 +1,6 @@
 import Comments from "../../components/Comments";
 import Layout from "../../components/Layout";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AddComment from "../../components/AddComment";
 import ReactMarkdown from "react-markdown";
 import { useRouter } from "next/router";
@@ -34,6 +34,8 @@ const Article = ({ data }) => {
   const [sorting, setSorting] = useState(`down`);
   const [slider, setSlider] = useState(1);
   const [eggClick, setEggClick] = useState(0);
+
+  //setInterval(setComments(data.comments), 1000);
 
 
   const handleSubmit = async (comment) => {

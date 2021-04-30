@@ -17,8 +17,10 @@ const AddArticle = ({ onSubmit }) => {
 
     const [image, setImage] = useState();
     const [loadingstate, setLoadingstate] = useState('');
+    const [checkimg, setCheckimg] = useState('');
 
     const uploadFile = async e => {
+        setImage('');
         setLoadingstate('loading image...');
         console.log("uploading...");
         const files = e.target.files;
@@ -34,6 +36,7 @@ const AddArticle = ({ onSubmit }) => {
         const file = await res.json();
         setImage(file.secure_url);
         setLoadingstate('');
+        setCheckimg('new');
         //this.setState({ image: file.secure_url })
     }
 
@@ -144,7 +147,17 @@ const AddArticle = ({ onSubmit }) => {
                         </div>
                         <label htmlFor="file" className={`${styles.label} ${styles.messageLabel}`}>
                             Kies een leuke afbeelding:
-                            <div htmlFor="file-upload" className={styles.customUpload}>Kies afbeelding</div>
+                            {checkimg !== 'new' ?
+                                <div htmlFor="file-upload" className={styles.customUpload}>
+                                    Upload afbeelding
+                            </div> :
+                                <div htmlFor="file-upload" className={styles.customUpload}>
+                                    Wissel afbeelding
+                            </div>
+                            }
+                            {/* <div htmlFor="file-upload" className={styles.customUpload}>
+                                Upload afbeelding
+                            </div> */}
                             <input id="file-upload" className={styles.imageUpload} type="file" id="file" name="file" accept="image/x-png,image/gif,image/jpeg" placeholder="upload image" required onChange={uploadFile} />
                         </label>
                         <div className={styles.loadingStateDiv}>

@@ -9,14 +9,14 @@ const Comments = ({ comments = [], sender, value, onValueChange, slideValue }) =
   const messagesRef = useRef(null);
 
   const scrollToBottom = () => {
-    console.log(messagesRef.current);
+    //console.log(messagesRef.current);
     messagesRef.current.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "start"
     });
 
-    console.log(`RHAAAAAAAAH`);
+    //console.log(`RHAAAAAAAAH`);
   };
 
   useEffect(() => {
@@ -25,7 +25,7 @@ const Comments = ({ comments = [], sender, value, onValueChange, slideValue }) =
 
   useEffect(() => {
     if (messagesRef.current) {
-      console.log(messagesRef.current);
+      //console.log(messagesRef.current);
       scrollToBottom();
     }
   }, [comments]);
@@ -38,7 +38,7 @@ const Comments = ({ comments = [], sender, value, onValueChange, slideValue }) =
   return (
     <>
       <div className={`${styles.sort}`}>
-        <h3 className={styles.title}>{sender}</h3>
+        <h3 className={styles.title}>Stuur een berichtje naar <span className={styles.sendertxt}>{sender}</span></h3>
         <button className={`${styles.sortButton}`} value={value} onClick={sortChanging}>
           {value === `up` ?
             <FontAwesomeIcon icon={faSortDown} /> :
