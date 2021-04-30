@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { faCut } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const SlugHead = ({ image, color, date, title, content, value, onValueChange, draw }) => {
+const SlugHead = ({ image, color, date, title, description, value, onValueChange, draw }) => {
 
 
     let today = new Date();
@@ -110,7 +110,7 @@ const SlugHead = ({ image, color, date, title, content, value, onValueChange, dr
                                 <div className={styles.showEggGrid}>
                                     <div className={styles.eggHatchingContent}>
                                         <h2>{title}</h2>
-                                        <p>{content}</p>
+                                        <p>{description}</p>
                                         <img width="500" src={image} alt="leuke afbeelding"></img>
                                     </div>
                                     <div className={`${styles.fadeEgg}`}>

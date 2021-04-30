@@ -19,10 +19,6 @@
       "type": "text",
       "required": true
     },
-    "content": {
-      "type": "richtext",
-      "required": true
-    },
     "status": {
       "type": "enumeration",
       "enum": [

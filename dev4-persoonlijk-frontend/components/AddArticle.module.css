@@ -222,3 +222,19 @@
   padding: 0.5rem 0rem 0.5rem 1rem;
   margin-top: 0.5rem;
 }
+
+.imageUpload{
+  display: none;
+}
+
+.customUpload{
+  margin-top: 1rem;
+  padding: 0.4rem;
+  width: 8rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(236, 236, 236);
+  border-radius: 1.4rem;
+  cursor: pointer;
+}

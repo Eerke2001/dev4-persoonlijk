@@ -51,7 +51,6 @@ const AddArticle = ({ onSubmit }) => {
         const data = {
             title: e.target.title.value,
             description: e.target.description.value,
-            content: e.target.content.value,
             status: 'published',
             slug: officialSlug,
             sender: e.target.sender.value,
@@ -90,12 +89,8 @@ const AddArticle = ({ onSubmit }) => {
           <input className={`${styles.titleInput}`} type="text" name="title" onChange={handleSlugChange} value={slugValue} required />
                         </label>
                         <label className={`${styles.label} ${styles.messageLabel}`}>
-                            Description:
+                            Schrijf een boodschap:
           <textarea className={styles.textarea} name="description" required maxLength="500"></textarea>
-                        </label>
-                        <label className={`${styles.label} ${styles.messageLabel}`}>
-                            Content:
-          <textarea name="content" required maxLength="500"></textarea>
                         </label>
                         <div className={`${styles.label} ${styles.messageLabel}`}>
                             <p className={styles.eggCol}>Kleur van het ei:</p>
@@ -148,7 +143,9 @@ const AddArticle = ({ onSubmit }) => {
                             </div>
                         </div>
                         <label htmlFor="file" className={`${styles.label} ${styles.messageLabel}`}>
-                            <input type="file" id="file" name="file" placeholder="upload image" required onChange={uploadFile} />
+                            Kies een leuke afbeelding:
+                            <div htmlFor="file-upload" className={styles.customUpload}>Kies afbeelding</div>
+                            <input id="file-upload" className={styles.imageUpload} type="file" id="file" name="file" accept="image/x-png,image/gif,image/jpeg" placeholder="upload image" required onChange={uploadFile} />
                         </label>
                         <div className={styles.loadingStateDiv}>
                             {
