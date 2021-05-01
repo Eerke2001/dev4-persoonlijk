@@ -227,6 +227,11 @@
   display: none;
 }
 
+.imageDisp{
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+}
+
 .customUpload{
   margin-top: 1rem;
   padding: 0.4rem;

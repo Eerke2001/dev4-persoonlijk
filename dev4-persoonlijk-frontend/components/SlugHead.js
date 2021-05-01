@@ -139,14 +139,14 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                                         <p className={styles.description}>{description}</p>
                                         {
                                             image && size.width > 540 ?
-                                                <img width="500" src={image} alt="preview image"></img> :
+                                                <img className={styles.imageDisp} width="500" src={image} alt="preview image"></img> :
                                                 image && size.width > 460 ?
-                                                    <img width="420" src={image} alt="preview image"></img> :
+                                                    <img className={styles.imageDisp} width="420" src={image} alt="preview image"></img> :
                                                     image && size.width > 400 ?
-                                                        <img width="360" src={image} alt="preview image"></img> :
+                                                        <img className={styles.imageDisp} width="360" src={image} alt="preview image"></img> :
                                                         image && size.width > 350 ?
-                                                            <img width="310" src={image} alt="preview image"></img> : image &&
-                                                            <img width="280" src={image} alt="preview image"></img>
+                                                            <img className={styles.imageDisp} width="310" src={image} alt="preview image"></img> : image &&
+                                                            <img className={styles.imageDisp} width="280" src={image} alt="preview image"></img>
                                         }
                                     </div>
                                     <div className={`${styles.fadeEgg}`}>
