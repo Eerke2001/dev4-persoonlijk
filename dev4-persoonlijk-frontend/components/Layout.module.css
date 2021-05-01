@@ -21,6 +21,7 @@
 .header {
   text-align: center;
   z-index: 5;
+  width: 100vw;
 }
 
 .title a {
@@ -55,8 +56,6 @@
 .main {
   width: 100vw;
   padding: 2rem;
-  flex: none;
-  display: inline;
 }
 
 .container{
