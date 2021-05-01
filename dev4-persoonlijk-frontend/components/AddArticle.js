@@ -7,6 +7,7 @@ const AddArticle = ({ onSubmit }) => {
 
     const [slugValue, setSlugValue] = useState('');
     const currentDate = new Date();
+    console.log(currentDate);
 
     const randomNum = Math.floor(Math.random() * 100000);
     //console.log(randomNum);
@@ -78,7 +79,7 @@ const AddArticle = ({ onSubmit }) => {
             <div>
                 <p className={styles.info}>De ontvanger zal jouw boodschap in de vorm van een ei krijgen waarin jouw boodschap verstopt zit.</p>
             </div>
-            <h3>Maak een boodschap</h3>
+            <h3 className={styles.h3}>Maak een boodschap</h3>
 
             <form onSubmit={(e) => handleSubmit(e)} >
 

@@ -238,3 +238,78 @@
   border-radius: 1.4rem;
   cursor: pointer;
 }
+
+@media only screen and (max-width: 850px){
+.form{
+    width: 100%;
+}
+ 
+}
+
+@media only screen and (max-width: 705px){
+
+.form{
+  width: 100vw;
+  margin: 0rem;
+  border-radius: 0;
+}
+
+.info{
+  margin: 0rem 3rem 0rem 3rem;
+}
+
+.h3{
+  margin: 2rem 3rem 0rem 3rem;
+}
+
+.nameInput{
+  margin: 1rem 3rem 0rem 1rem;
+}
+ 
+}
+
+@media only screen and (max-width: 625px){
+  .yellowEgg, .blueEgg, .greenEgg, .pinkEgg, .redEgg{
+    width: 5rem;
+}
+}
+
+@media only screen and (max-width: 625px){
+  .yellowEgg, .blueEgg, .greenEgg, .pinkEgg, .redEgg{
+    width: 4.5rem;
+}
+.colorInputText{
+  display: none;
+}
+}
+
+@media only screen and (max-width: 430px){
+  .colorLabel{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.yellowEgg, .blueEgg, .greenEgg, .pinkEgg, .redEgg{
+    width: 6rem;
+    height: 2rem;
+}
+.backColorInput{
+  margin: 0rem 0.3rem 0rem 0.3rem;
+}
+}
+
+@media only screen and (max-width: 400px){
+  .info{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+  .h3{
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 310px){
+  .nameInput{
+    width: 200px;
+  }
+}

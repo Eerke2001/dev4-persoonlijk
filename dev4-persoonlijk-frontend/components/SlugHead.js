@@ -9,10 +9,14 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
 
     let today = new Date();
     let dateNew;
-    //console.log(color);
+    //console.log(date);
 
-    if (parseInt(today.getMonth() + 1) < 10) {
+    if ((parseInt(today.getMonth() + 1) < 10) && (parseInt(today.getDate()) < 10)) {
+        dateNew = today.getFullYear() + "-" + 0 + parseInt(today.getMonth() + 1) + "-" + 0 + today.getDate();
+    } else if (parseInt(today.getMonth() + 1) < 10) {
         dateNew = today.getFullYear() + "-" + 0 + parseInt(today.getMonth() + 1) + "-" + today.getDate();
+    } else if (parseInt(today.getDate()) < 10) {
+        dateNew = today.getFullYear() + "-" + 0 + parseInt(today.getMonth() + 1) + "-" + 0 + today.getDate();
     } else {
         dateNew = today.getFullYear() + "-" + parseInt(today.getMonth() + 1) + "-" + today.getDate();
     }

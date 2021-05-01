@@ -49,3 +49,50 @@
   line-height: 1.5;
   font-size: 1.5rem;
 }
+
+@media only screen and (max-width: 705px){
+
+.main {
+  width: 100vw;
+  padding: 2rem;
+  flex: none;
+  display: inline;
+}
+
+.container{
+  margin: 0rem;
+  padding: 0rem;
+}
+
+.main{
+  margin: 0rem;
+  padding: 0rem;
+}
+
+.header{
+  margin-top: 2rem;
+}
+
+.title{
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+ 
+}
+
+@media only screen and (max-width: 460px){
+  .description{
+    margin-left: 3rem;
+    margin-right: 3rem;
+  }
+}
+
+@media only screen and (max-width: 400px){
+  .title{
+    font-size: 3rem;
+  }
+  .description{
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
