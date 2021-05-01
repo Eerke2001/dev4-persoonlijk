@@ -33,6 +33,28 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
         //console.log(`HEJHMHZEPOFH`)
     }
 
+    const size = useWindowSize();
+    //console.log(size.width);
+
+    function useWindowSize() {
+        const [windowSize, setWindowSize] = useState({
+            width: undefined,
+            height: undefined,
+        });
+        useEffect(() => {
+            function handleResize() {
+                setWindowSize({
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+            }
+            window.addEventListener("resize", handleResize);
+            handleResize();
+            return () => window.removeEventListener("resize", handleResize);
+        }, []);
+        return windowSize;
+    }
+
     //console.log(date);
 
     const [copySuccess, setCopySuccess] = useState('');
@@ -114,8 +136,18 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                                 <div className={styles.showEggGrid}>
                                     <div className={styles.eggHatchingContent}>
                                         <h2>{title}</h2>
-                                        <p>{description}</p>
-                                        <img width="500" src={image} alt="leuke afbeelding"></img>
+                                        <p className={styles.description}>{description}</p>
+                                        {
+                                            image && size.width > 540 ?
+                                                <img width="500" src={image} alt="preview image"></img> :
+                                                image && size.width > 460 ?
+                                                    <img width="420" src={image} alt="preview image"></img> :
+                                                    image && size.width > 400 ?
+                                                        <img width="360" src={image} alt="preview image"></img> :
+                                                        image && size.width > 350 ?
+                                                            <img width="310" src={image} alt="preview image"></img> : image &&
+                                                            <img width="280" src={image} alt="preview image"></img>
+                                        }
                                     </div>
                                     <div className={`${styles.fadeEgg}`}>
                                         {color === `blue` ?
@@ -135,9 +167,6 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                                                             <div className={`${styles.hatchTwo} ${styles.test}`}></div>
                                                         </div>
                                         }
-                                        {/* <div className={`${styles.egg} ${styles.yellowEgg}`}>
-                                            <div className={`${styles.hatchTwo} ${styles.test}`}></div>
-                                        </div> */}
                                     </div>
                                 </div>
                             </div>

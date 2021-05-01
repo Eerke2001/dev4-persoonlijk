@@ -20,6 +20,29 @@ const AddArticle = ({ onSubmit }) => {
     const [loadingstate, setLoadingstate] = useState('');
     const [checkimg, setCheckimg] = useState('');
 
+    const size = useWindowSize();
+    //console.log(size.width);
+
+    function useWindowSize() {
+        const [windowSize, setWindowSize] = useState({
+            width: undefined,
+            height: undefined,
+        });
+        useEffect(() => {
+            function handleResize() {
+                setWindowSize({
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                });
+            }
+            window.addEventListener("resize", handleResize);
+            handleResize();
+            return () => window.removeEventListener("resize", handleResize);
+        }, []);
+        return windowSize;
+    }
+
+
     const uploadFile = async e => {
         setImage('');
         setLoadingstate('loading image...');
@@ -73,6 +96,7 @@ const AddArticle = ({ onSubmit }) => {
         //console.log(process.env.NEXT_PAGE_URL);
 
     };
+
 
     return (
         <section className={styles.section}>
@@ -156,15 +180,21 @@ const AddArticle = ({ onSubmit }) => {
                                     Wissel afbeelding
                             </div>
                             }
-                            {/* <div htmlFor="file-upload" className={styles.customUpload}>
-                                Upload afbeelding
-                            </div> */}
+                            {
+                            }
                             <input id="file-upload" className={styles.imageUpload} type="file" id="file" name="file" accept="image/x-png,image/gif,image/jpeg" placeholder="upload image" required onChange={uploadFile} />
                         </label>
                         <div className={styles.loadingStateDiv}>
                             {
-                                image &&
-                                <img width="500" src={image} alt="preview image"></img>
+                                image && size.width > 540 ?
+                                    <img width="500" src={image} alt="preview image"></img> :
+                                    image && size.width > 460 ?
+                                        <img width="420" src={image} alt="preview image"></img> :
+                                        image && size.width > 400 ?
+                                            <img width="360" src={image} alt="preview image"></img> :
+                                            image && size.width > 350 ?
+                                                <img width="310" src={image} alt="preview image"></img> : image &&
+                                                <img width="280" src={image} alt="preview image"></img>
                             }
                             {
                                 loadingstate === "loading image..." &&
