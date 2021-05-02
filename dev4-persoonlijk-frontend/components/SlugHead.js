@@ -131,7 +131,7 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                             <Sparkles draw={draw} />
                         </> :
                         <>
-                            <div className={styles.eggContainer}>
+                            <div className={`${styles.eggContainer} ${styles.containerFlex}`}>
                                 <div className={styles.eggHatchingDiv}></div>
                                 <div className={styles.showEggGrid}>
                                     <div className={styles.eggHatchingContent}>
@@ -149,7 +149,7 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                                                             <img className={styles.imageDisp} width="280" src={image} alt="preview image"></img>
                                         }
                                     </div>
-                                    <div className={`${styles.fadeEgg}`}>
+                                    {/* <div className={`${styles.fadeEgg}`}>
                                         {color === `blue` ?
                                             <div className={`${styles.egg} ${styles.blueEgg}`}>
                                                 <div className={`${styles.hatchTwo} ${styles.test}`}></div>
@@ -167,7 +167,7 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                                                             <div className={`${styles.hatchTwo} ${styles.test}`}></div>
                                                         </div>
                                         }
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                             <Sparkles draw={draw} />
