@@ -210,7 +210,7 @@ const AddArticle = ({ onSubmit }) => {
                             }
                         </div>
                     </div>
-                    <input className={styles.submit} type="submit" value="Create message" />
+                    <input className={styles.submit} type="submit" value="Check your message" />
                 </div>
             </form>
         </section>

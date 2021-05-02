@@ -2,6 +2,7 @@ import styles from "./SlugHead.module.css";
 import Sparkles from "./Sparkles.js";
 import React, { useEffect, useRef, useState } from 'react';
 import { faCut } from '@fortawesome/free-solid-svg-icons';
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SlugHead = ({ image, color, date, title, description, value, onValueChange, draw }) => {
@@ -95,8 +96,8 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                 Link copied to clipboard!
             </div>
 
-            <div className={styles.urlButton} onClick={copyToClipboard}>
-                <FontAwesomeIcon icon={faCut} />
+            <div className={styles.urlButton} title="Share the message" onClick={copyToClipboard}>
+                <FontAwesomeIcon icon={faShareAlt} />
             </div>
             <form style={{ position: 'absolute', top: '0px', left: '0px', opacity: 0, zIndex: -10 }}>
                 <input ref={urlRef} value='' readOnly></input>

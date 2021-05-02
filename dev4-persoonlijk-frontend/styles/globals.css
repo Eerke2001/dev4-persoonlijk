@@ -25,6 +25,12 @@ a {
   font-size: 1.5rem;
 }
 
+.fa-share-alt{
+  color: #0070f3;
+  font-size: 1.3rem;
+  margin-left: -2px;
+}
+
 .fa-paper-plane{
   color: white;
   z-index: 2;

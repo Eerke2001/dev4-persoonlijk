@@ -35,42 +35,6 @@ const Article = ({ data }) => {
   const [slider, setSlider] = useState(1);
   const [eggClick, setEggClick] = useState(0);
 
-  // const [time, setTime] = useState();
-
-  // const refreshComments = async (comment) => {
-  //   //console.log(comment);
-  //   const response = await fetch(
-  //     `${process.env.NEXT_PUBLIC_STRAPI_URL}/comments/`,
-  //     {
-  //       method: "POST",
-  //       body: JSON.stringify(comment),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     }
-  //   );
-  //   if (response.ok) {
-  //     const result = await response.json();
-  //     const tmp = [...comments, result];
-  //     //console.log(tmp);
-  //     setComments(tmp);
-  //     console.log(comments);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     refreshComments();
-
-  //   }, 5000);
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
-
-  //setInterval(setComments(data.comments), 1000);
-
-
   const handleSubmit = async (comment) => {
     //console.log(comment);
     comment.article = data.id;
