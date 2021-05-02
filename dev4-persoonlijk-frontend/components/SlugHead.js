@@ -107,21 +107,23 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
                     {dateNew !== date ?
                         <>
                             <div className={styles.chickenDivComplete}>
-                                <div className={styles.featherTwo}></div>
-                                <div className={styles.fingOne}></div>
-                                <div className={styles.fingTwo}></div>
-                                <div className={styles.legOne}></div>
-                                <div className={styles.legTwo}></div>
-                                <div className={styles.chickenLegBolTwo}></div>
-                                <div className={styles.chickenLegBolOne}></div>
-                                <div className={styles.chickenHead}></div>
-                                <div className={styles.chickenBody}></div>
-                                <div className={styles.beakOne}></div>
-                                <div className={styles.chickenEye}>
-                                    <div className={styles.eyeShine}></div>
+                                <div className={styles.chickenPrison}>
+                                    <div className={styles.featherTwo}></div>
+                                    <div className={styles.fingOne}></div>
+                                    <div className={styles.fingTwo}></div>
+                                    <div className={styles.legOne}></div>
+                                    <div className={styles.legTwo}></div>
+                                    <div className={styles.chickenLegBolTwo}></div>
+                                    <div className={styles.chickenLegBolOne}></div>
+                                    <div className={styles.chickenHead}></div>
+                                    <div className={styles.chickenBody}></div>
+                                    <div className={styles.beakOne}></div>
+                                    <div className={styles.chickenEye}>
+                                        <div className={styles.eyeShine}></div>
+                                    </div>
+                                    <div className={styles.feather}></div>
+                                    <div className={styles.chickenFeather}></div>
                                 </div>
-                                <div className={styles.feather}></div>
-                                <div className={styles.chickenFeather}></div>
                             </div>
                             <div className={styles.eggHatchingContent}>
                                 <p className={styles.huh}>Huh? Een kuiken?</p>
