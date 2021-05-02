@@ -7,7 +7,7 @@ const AddArticle = ({ onSubmit }) => {
 
     const [slugValue, setSlugValue] = useState('');
     const currentDate = new Date();
-    console.log(currentDate);
+    //console.log(currentDate);
 
     const randomNum = Math.floor(Math.random() * 100000);
     //console.log(randomNum);

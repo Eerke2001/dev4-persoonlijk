@@ -6,10 +6,14 @@ import styles from "../styles/Home.module.css";
 import AddArticle from "../components/AddArticle.js";
 import { useState } from "react";
 
+console.log(`Enjoy Sticky Message!`);
+console.log(`---------------------`);
+console.log(`Created by: Erin Troch`);
+
 export default function Home({ data }) {
 
   const [articles, setArticles] = useState(data);
-  console.log(articles);
+  //console.log(articles);
 
   const handleSubmit = async (article) => {
     //console.log(article);

@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const SlugHead = ({ image, color, date, title, description, value, onValueChange, draw }) => {
 
-
     let today = new Date();
     let dateNew;
     //console.log(date);
@@ -26,7 +25,7 @@ const SlugHead = ({ image, color, date, title, description, value, onValueChange
     const clickEgg = () => {
         value++;
         onValueChange(value);
-        console.log(value);
+        //console.log(value);
     }
 
     if (dateNew === date) {
